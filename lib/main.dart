@@ -1,8 +1,4 @@
 import 'dart:convert';
-import 'dart:io';
-
-//import 'package:cookie_jar/cookie_jar.dart';
-//import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
@@ -128,20 +124,30 @@ class _MyHomePageState extends State<MyHomePage> {
 //
 //    postData = data;
 
-    Map<String, String> data = {
-      'username': 'abc111',
-      'password': 'a123456',
-      'width': width.toString()
-    };
+    Map<String, String> data;
+    if (width != null) {
+      data = {
+        'username': 'abc111',
+        'password': 'a1234567',
+        'width': width.toString()
+      };
+    } else {
+      data = {
+        'username': 'abc111',
+        'password': 'a1234567',
+      };
+    }
 
     postData = data;
+
+    print('postData === $postData');
 
 //    var url = 'http://192.168.31.186:28082/api/login';
     var url = 'http://43.243.50.103:16888/api/login';
 
     http.Response res = await http.post(
       url,
-      body: data,
+      body: postData,
       headers: headers,
     );
     print('headers3======$headers');
