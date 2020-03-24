@@ -78,7 +78,8 @@ class _MyHomePageState extends State<MyHomePage> {
 //    print('header======$header');
 
 //    var url = 'http://192.168.31.186:28082/api/need-security-code';
-    var url = 'http://43.243.50.103:16888/api/need-security-code';
+//    var url = 'http://43.243.50.103:16888/api/need-security-code';
+    String url = 'https://testapi.fiigame.com/api/need-security-code';
     http.Response response = await http.get(url, headers: headers);
     updateCookie(response);
     print('headers======$headers');
@@ -100,16 +101,16 @@ class _MyHomePageState extends State<MyHomePage> {
 //    );
 //    var url =
 //        'http://192.168.31.186:28082/api/utils/login-security-code?backWidth=344&targetWidth=63';
-    var url =
-        'http://43.243.50.103:16888/api/utils/login-security-code?backWidth=344&targetWidth=63';
-    http.Response code1 = await http.get(url, headers: headers);
-    updateCookie(code1);
-    print('headers2======$headers');
-    setState(() {
-      _counter++;
-      code = code1.body;
-      width = jsonDecode(code1.body)['data']['position'];
-    });
+//    var url =
+//        'http://43.243.50.103:16888/api/utils/login-security-code?backWidth=344&targetWidth=63';
+//    http.Response code1 = await http.get(url, headers: headers);
+//    updateCookie(code1);
+//    print('headers2======$headers');
+//    setState(() {
+//      _counter++;
+//      code = code1.body;
+//      width = jsonDecode(code1.body)['data']['position'];
+//    });
   }
 
   login() async {
@@ -143,7 +144,8 @@ class _MyHomePageState extends State<MyHomePage> {
     print('postData === $postData');
 
 //    var url = 'http://192.168.31.186:28082/api/login';
-    var url = 'http://43.243.50.103:16888/api/login';
+//    var url = 'http://43.243.50.103:16888/api/login';
+    String url = 'https://testapi.fiigame.com/api/login';
 
     http.Response res = await http.post(
       url,
